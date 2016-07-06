@@ -1,5 +1,6 @@
 *~
 *.out
+*.h5
 *.DAT
 *#
 *.aux
@@ -10,6 +11,8 @@
 *.swp
 *.zip
 *.a
-*.png
-!doc/figs/*
 *.pdf
+TAGS
+*.pyc
+*.png
+!doc/figs
