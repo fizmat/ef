@@ -13,7 +13,7 @@ cd petsc-3.4.5
 
 ### compile debug-version
 PETSC_FLAGS="--with-cc=mpicc --with-cxx=mpic++ --with-fc=0 --with-clanguage=cxx"
-sed -i '1 s/python/python2' ./configure
+sed -i '1 s/python/python2/' ./configure
 ./configure ${PETSC_FLAGS} --prefix=${EFDIR}/petsc/debug --with-debugging=1
 make PETSC_DIR=${EFDIR}/petsc-3.4.5 PETSC_ARCH=arch-linux2-cxx-debug all
 make PETSC_DIR=${EFDIR}/petsc-3.4.5 PETSC_ARCH=arch-linux2-cxx-debug test
