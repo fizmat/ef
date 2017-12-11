@@ -5,8 +5,8 @@ SHELL:=/bin/bash -O extglob
 ##### Prll
 #export OMPI_CXX=clang++
 CC = mpic++
-HDF5FLAGS=-I/usr/include/hdf5/openmpi -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_BSD_SOURCE -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security
-PETSCFLAGS=-isystem /usr/include/petsc
+HDF5FLAGS=-I/usr/include/hdf5/openmpi -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security
+PETSCFLAGS=-isystem lib/petsc/opt/include/
 SUPPRESS_MPI_C11_WARNING=-Wno-literal-suffix
 CFLAGS = ${HDF5FLAGS} ${PETSCFLAGS} -O2 -std=c++11 ${SUPPRESS_MPI_C11_WARNING}
 LDFLAGS = 
@@ -14,7 +14,7 @@ LDFLAGS =
 ### Libraries
 COMMONLIBS=-lm
 BOOSTLIBS=-lboost_program_options
-PETSCLIBS=-lpetsc
+PETSCLIBS=-lpetsc -L ./lib/petsc/opt/lib/
 HDF5LIBS=-L/usr/lib/x86_64-linux-gnu/hdf5/openmpi -lhdf5_hl -lhdf5 -Wl,-z,relro -lpthread -lz -ldl -lm -Wl,-rpath -Wl,/usr/lib/x86_64-linux-gnu/hdf5/openmpi
 LIBS=${COMMONLIBS} ${BOOSTLIBS} ${PETSCLIBS} ${HDF5LIBS}
 
