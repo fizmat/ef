@@ -6,7 +6,7 @@ SHELL:=/bin/bash -O extglob
 #export OMPI_CXX=clang++
 CC = mpic++
 HDF5FLAGS=-I/usr/include/hdf5/openmpi -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security
-PETSCFLAGS=-isystem /usr/include/petsc
+PETSCFLAGS=-isystem ./lib/petsc/debug/include
 SUPPRESS_MPI_C11_WARNING=-Wno-literal-suffix
 WARNINGS=-Wall -fbounds-check -Warray-bounds -fsanitize=address
 CFLAGS = ${HDF5FLAGS} ${PETSCFLAGS} -O2 -std=c++11 ${WARNINGS} ${SUPPRESS_MPI_C11_WARNING}
