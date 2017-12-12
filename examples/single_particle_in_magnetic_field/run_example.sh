@@ -1,3 +1,6 @@
+LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:../../lib/petsc/debug/lib
+export LD_LIBRARY_PATH
+
 ../../ef.out single_particle_in_magnetic_field.conf
 python3 plot.py
 #../../ef.out large_time_step.conf
