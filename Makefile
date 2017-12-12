@@ -8,13 +8,13 @@ CC = mpic++
 HDF5FLAGS=-I/usr/include/hdf5/openmpi -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security
 PETSCFLAGS=-isystem ./lib/petsc/debug/include
 SUPPRESS_MPI_C11_WARNING=-Wno-literal-suffix
-WARNINGS=-Wall -fbounds-check -Warray-bounds -fsanitize=address
+WARNINGS=-Wall -fbounds-check -Warray-bounds
 CFLAGS = ${HDF5FLAGS} ${PETSCFLAGS} -O2 -std=c++11 ${WARNINGS} ${SUPPRESS_MPI_C11_WARNING}
 LDFLAGS = 
 
 ### Libraries
-COMMONLIBS=-lm -fsanitize=address
-SANITIZER=-lasan
+COMMONLIBS=-lm
+SANITIZER=
 BOOSTLIBS=-lboost_program_options
 PETSCLIBS=-lpetsc -L ./lib/petsc/debug/lib/
 HDF5LIBS=-L/usr/lib/x86_64-linux-gnu/hdf5/openmpi -lhdf5_hl -lhdf5 -Wl,-z,relro -lpthread -lz -ldl -lm -Wl,-rpath -Wl,/usr/lib/x86_64-linux-gnu/hdf5/openmpi
