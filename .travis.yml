@@ -1,0 +1,9 @@
+language: c++
+env: OMP_NUM_THREADS=4
+addons:
+  apt:
+    packages:
+    - libboost-all-dev
+    - petsc-dev
+    - libhdf5-openmpi-dev
+script: make
