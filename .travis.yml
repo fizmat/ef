@@ -5,5 +5,5 @@ addons:
     packages:
     - libboost-all-dev
     - petsc-dev
-    - libhdf5-openmpi-dev
+    - libhdf5-mpich2-dev
 script: make
